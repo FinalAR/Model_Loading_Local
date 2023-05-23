@@ -125,6 +125,7 @@ function initialize()
 	function onProgress(xhr) { console.log( (xhr.loaded / xhr.total * 100) + '% loaded' ); }
 	function onError(xhr) { console.log( 'An error happened' ); }
 	
+	console.time("Time this");
 	new THREE.MTLLoader()
 		.setPath( 'models/PalletPlyWood/' )
 		.load( 'PalletPlywoodNew_GameReady.mtl', function ( materials ) {
@@ -138,6 +139,7 @@ function initialize()
 					mesh0.position.y = 0.25;
 					mesh0.scale.set(2.0,2.0,2.0);
 					markerRoot1.add(mesh0);
+					console.timeEnd("Time this");
 				}, onProgress, onError );
 		});
 }

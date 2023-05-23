@@ -125,6 +125,7 @@ function initialize()
 	function onProgress(xhr) { console.log( (xhr.loaded / xhr.total * 100) + '% loaded' ); }
 	function onError(xhr) { console.log( 'An error happened' ); }
 	
+	console.time("Time this");
 	new THREE.MTLLoader()
 		.setPath( 'models/benze/' )
 		.load( 'Blank.MTL', function ( materials ) {
@@ -138,6 +139,7 @@ function initialize()
 					mesh0.position.y = 0.25;
 					mesh0.scale.set(0.50,0.50,0.50);
 					markerRoot1.add(mesh0);
+					console.timeEnd("Time this");
 				}, onProgress, onError );
 		});
 }
