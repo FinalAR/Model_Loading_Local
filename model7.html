@@ -126,13 +126,13 @@ function initialize()
 	function onError(xhr) { console.log( 'An error happened' ); }
 	
 	new THREE.MTLLoader()
-		.setPath( 'models/gull/' )
+		.setPath( 'models/gull/gull/' )
 		.load( 'GULL.MTL', function ( materials ) {
 			materials.preload();
 			new THREE.OBJLoader()
 				.setMaterials( materials )
-				.setPath( 'models/gull/' )
-				.load( 'GULL.obj', function ( group ) {
+				.setPath( 'models/gull/gull/' )
+				.load( 'GULL.OBJ', function ( group ) {
 					mesh0 = group.children[0];
 					mesh0.material.side = THREE.DoubleSide;
 					mesh0.position.y = 0.50;

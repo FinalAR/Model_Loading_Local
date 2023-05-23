@@ -126,17 +126,17 @@ function initialize()
 	function onError(xhr) { console.log( 'An error happened' ); }
 	
 	new THREE.MTLLoader()
-		.setPath( 'models/bakedIntergalacticSpaceships/' )
-		.load( 'Baked_Animations_Intergalactic_Spaceships_Version_2.MTL', function ( materials ) {
+		.setPath( 'models/Shoes/' )
+		.load( '10493_Leather_Boxing_Gloves_V1_L3.mtl', function ( materials ) {
 			materials.preload();
 			new THREE.OBJLoader()
 				.setMaterials( materials )
-				.setPath( 'models/bakedIntergalacticSpaceships/' )
-				.load( 'Baked_Animations_Intergalactic_Spaceships_Version_2.obj', function ( group ) {
+				.setPath( 'models/Shoes/' )
+				.load( '10493_Leather_Boxing_Gloves_V1_L3.obj', function ( group ) {
 					mesh0 = group.children[0];
 					mesh0.material.side = THREE.DoubleSide;
-					mesh0.position.y = 0.25;
-					mesh0.scale.set(0.25,0.25,0.25);
+					mesh0.position.y = 1.0;
+					mesh0.scale.set(0.1,0.1,0.1);
 					markerRoot1.add(mesh0);
 				}, onProgress, onError );
 		});
